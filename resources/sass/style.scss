@@ -1,0 +1,515 @@
+/* ============= FONTS ============= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ============= IMPORT ============= */
+@import 'variables';
+
+/* ============= GÉNÉRAL ============= */
+*, 
+::before, 
+::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, 
+body {
+    font-family: $poppins;
+    font-size: $f-text;
+    color: $black;
+    background-color: $background;
+    scroll-behavior: smooth;
+    user-select: none;
+    @include laptop {
+        font-size: 18px;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, 
+li {
+    list-style-type: none;
+}
+
+h1 {
+    font-size: $f-h1;
+    font-weight: 600;
+    @include laptop {
+        font-size: 48px;
+    }
+}
+
+button {
+    color: $white;
+}
+
+section {
+    padding: 90px 20px 20px;
+    @include tablet {
+        padding: 90px 50px 60px;
+    }
+    @include laptop {
+        padding: 140px 100px 60px;
+    }
+    @include desktop {
+        padding: 140px 200px 60px;
+    }
+}
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(136, 136, 136, 25%);
+}
+
+.alert {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 20px 30px;
+    color: $white;
+    border-radius: 10px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.alert-danger {
+    background-color: $red;
+}
+
+.alert-success {
+    background-color: $green;
+}
+
+/* ================================= NAV ================================= */
+nav {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    @include display-flex(flex, center, center, unset);
+    background-color: $white;
+    box-shadow: 0 2px 15px rgba(51, 51, 51, 0.25);
+    z-index: 99;
+    .bx-menu {
+        position: absolute;
+        cursor: pointer;
+        top: 17.5px;
+        left: 20px;
+        font-size: $f-icon-bigger;
+        @include tablet {
+            left: 30px;
+        }
+    }
+    .img-nav {
+        height: 50px;
+    }
+}
+
+.nav-list {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: $width-nav;
+    height: $height-nav;
+    transition: 0.4s ease-in-out;
+    background-color: $white;
+    @include display-flex(flex, unset, unset, column);
+    padding: 60px;
+    z-index: 100;
+    @include laptop {
+        width: 400px;
+    }
+    &.active {
+        left: 0;
+    }
+    .nav-item {
+        margin-bottom: 20px;
+        font-size: $f-nav;
+        @include laptop {
+            font-size: 24px;
+        }
+        &:hover {
+            font-weight: 500;
+        }
+        &.active-link {
+            color: $blue;
+            font-weight: 500;
+        }
+    }
+    .link-profil {
+        @include display-flex(flex, center, space-between, unset);
+        cursor: pointer;
+        .bx-chevron-down {
+            transition: transform 0.4s ease-in-out;
+            &.rotate {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .nav-profil-list {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.4s ease-in-out;
+        &.active {
+            height: 70.8px;
+            @include laptop {
+                height: 83.6px;
+            }
+        }
+        .nav-profil-item {
+            display: inline-block;
+            margin-top: 5px;
+            margin-left: 10px;
+            width: 100%;
+            color: $black;
+            font-weight: 400;
+            &:hover {
+                font-weight: 500;
+            }
+            .logout:hover {
+                color: red;
+            }
+        }
+    }
+}
+
+/* ================================= HOME ================================= */
+.text-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: $white;
+    border-radius: 10px;
+    text-align: justify;
+    box-shadow: 0 2px 10px rgba(136, 136, 136, 25%);
+}
+
+.btn-home {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    background-color: $blue;
+    color: $white;
+    font-size: $f-nav;
+    text-align: center;
+    border-radius: 999px;
+    @include tablet {
+        display: inline-block;
+        width: 45%;
+        height: 200px;
+        line-height: 200px;
+        padding: 0;
+        margin: 30px 2.2% 0;
+        border-radius: 20px;
+    }
+    @include laptop {
+        font-size: 24px;
+    }
+    &:hover {
+        background-color: $blue-2;
+    }
+}
+
+/* ================================= LOGIN ================================= */
+.container-login {
+    width: 100%;
+    height: 100vh;
+    @include display-flex(flex, center, unset, column);
+    padding: 20px 20px;
+    img {
+        width: 250px;
+        margin: 20px 0;
+    }
+}
+
+#form {
+    width: 100%;
+    background-color: $white;
+    margin: 20px auto 0;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(136, 136, 136, 25%);
+    hr {
+        height: 2px;
+        background-color: $black;
+        border: none;
+        margin-bottom: 20px;
+    }
+    label {
+        margin-bottom: 5px;
+    }
+    input, 
+    select, 
+    textarea {
+        padding: 7px 10px;
+        border: 1px solid $grey;
+        border-radius: 5px;
+    }
+    textarea {
+        height: 100px;
+    }
+    &.form-login {
+        @include tablet {
+            width: 500px;
+        }
+    }
+    .form-group {
+        @include display-flex(flex, unset, unset, column);
+        margin-bottom: 20px;
+        table {
+            border-collapse: collapse;
+            td {
+                border: 1px solid $grey;
+                width: 50%;
+            }
+            input, 
+            select {
+                width: 100%;
+                border: none;
+                border-radius: 0;
+            }
+        }
+    }
+    .form-50 {
+        @include display-flex(inline-flex, unset, unset, column);
+        width: 100%;
+        margin-bottom: 20px;
+        @include tablet {
+            width: 49.6%;
+        }
+    }
+    .form-button {
+        @include display-flex(flex, unset, center, unset);
+    }
+    .errors {
+        background-color: crimson;
+        color: $white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+    .status {
+        background-color: green;
+        color: $white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+    .form-navigation {
+        @include display-flex(flex, unset, flex-end, unset);
+        &.nav-cr {
+            justify-content: space-between;
+            div {
+                @include display-flex(flex, unset, unset, column);
+                @include tablet {
+                    flex-direction: row;
+                }
+                button {
+                    line-height: 1;
+                    margin-left: 10px;
+                }
+                i {
+                    font-size: $f-icon;
+                }
+            }
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-left: 10px;
+            color: $white;
+        }
+    }
+}
+
+.input {
+    padding: 7px 10px;
+    border: 1px solid $grey;
+    border-radius: 5px;
+}
+
+.form-search {
+    @include display-flex(flex, unset, center, unset);
+    width: 100%;
+    margin: 0 auto 20px;
+    @include tablet {
+        width: 60%;
+    }
+    select, 
+    input {
+        width: 80%;
+        border-radius: 10px;
+        margin-right: 5px;
+    }
+    button {
+        color: $black;
+        font-size: $f-icon-nav;
+        line-height: 0;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    font-size: $f-text;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: $blue;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    @include tablet {
+        height: auto;
+    }
+    @include laptop {
+        font-size: 18px;
+    }
+}
+
+.btn-5 {
+    border-radius: 5px;
+}
+
+/* ================================= PRATICIENS / COMPTES RENDUS ================================= */
+.list {
+    padding-top: 10px;
+    clear: both;
+}
+
+.items {
+    background-color: $white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    @include display-flex(flex, unset, space-between, column);
+    box-shadow: 0 2px 10px rgba(136, 136, 136, 25%);
+    @include tablet {
+        flex-direction: row;
+    }
+}
+
+a.items:hover {
+    @include tablet {
+        .infos::after {
+            bottom: -5px;
+            left: 0;
+            transform-origin: 100% 100%;
+            transform: scaleX(1);
+        }
+    }
+    .item {
+        color: $blue;
+    }
+} 
+
+.item {
+    margin-bottom: 5px;
+    font-weight: 600;
+    @include tablet {
+        margin-bottom: 0;
+    }
+}
+
+.infos {
+    position: relative;
+    @include tablet {
+        text-align: right;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        transform-origin: 100% 0;
+        transform: scaleX(0);
+        width: 100%;
+        height: 2px;
+        background-color: $blue;
+        transition: transform 0.4s ease-in-out;
+    }
+}
+
+.btn-link {
+    float: right;
+    display: block;
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    color: $white;
+    background-color: $blue;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-row {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    font-size: $f-smallest;
+    background-color: $blue;
+    color: $white;
+    border-bottom: 1px solid $grey;
+    border-left: 1px solid $grey;
+    border-right: 1px solid $grey;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    @include laptop {
+        font-size: 16px;
+    }
+}
+
+.filter_container {
+    position: relative;
+    @include display-flex(flex, center, unset, unset);
+}
+
+#button-filter {
+    margin-right: 5px;
+}
+
+.filter_nav {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    background-color: $white;
+    border: 1px solid $grey;
+    z-index: 50;
+    &.active {
+        display: block;
+    }
+    label {
+        @include display-flex(flex, center, unset, unset);
+    }
+    input {
+        width: auto;
+        margin-right: 10px;
+    }
+    .filter-btn {
+        display: inline-block;
+        background-color: $blue;
+        color: $white;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+}

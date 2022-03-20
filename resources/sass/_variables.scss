@@ -1,0 +1,84 @@
+/* ============= VARIABLES ============= */
+/* ========== COLORS ========== */
+$background: #E6E6E6;
+$white: #F1F1F1;
+$black: #333333;
+$grey: #888888;
+$blue: #628DC3;
+$blue-2: #90AFD5;
+$red: red;
+$green: green;
+
+/* ========== Fonts ========== */
+$poppins: 'Poppins', sans-serif;
+
+/* ========== Font-size ========== */
+$f-h1: 38px;
+$f-nav: 20px;
+$f-text: 14px;
+$f-smallest: 12px;
+$f-icon-nav: 20px;
+$f-icon: 16px;
+$f-icon-bigger: 35px;
+
+/* ========== NAVBAR ========== */
+$width-nav: 100%;
+$height-nav: calc(100vh - 70px);
+
+/* ========== PADDING ========== */
+$p-1: 5px;
+$p-2: 10px;
+$p-3: 15px;
+$p-4: 20px;
+$p-5: 25px;
+// PADDING M
+$pm-1: 30px;
+$pm-2: 40px;
+// PADDING L
+$pl-1: 60px;
+// PADDING XL
+$pxl-1: 80px;
+$pxl-2: 120px;
+$pxl-3: 200px;
+
+/* ========== MARGIN ========== */
+$m-1: 5px;
+$m-2: 10px;
+$m-3: 15px;
+$m-4: 20px;
+$m-5: 25px;
+// MARGIN M
+$mm-1: 30px;
+$mm-2: 40px;
+// MARGIN L
+$ml-1: 60px;
+// MARGIN XL
+$mxl-1: 80px;
+$mxl-2: 120px;
+$mxl-3: 180px;
+
+/* ============= MIXINS ============= */
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin display-flex($display, $align, $justify, $direction) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
