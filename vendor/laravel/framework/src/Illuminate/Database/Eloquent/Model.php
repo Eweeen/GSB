@@ -53,14 +53,14 @@ abstract class Model implements Arrayable, ArrayAccess, CanBeEscapedWhenCastToSt
      *
      * @var string
      */
-    protected $primaryKey = 'VIS_MATRICULE';
+    protected $primaryKey = 'id';
 
     /**
      * The "type" of the primary key ID.
      *
      * @var string
      */
-    protected $keyType = 'string';
+    protected $keyType = 'int';
 
     /**
      * Indicates if the IDs are auto-incrementing.
