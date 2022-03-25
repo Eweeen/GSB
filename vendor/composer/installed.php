@@ -1,12 +1,12 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'type' => 'project',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
-        'name' => 'laravel/laravel',
+        'reference' => '99dbf2ee9e9d49463549585f59abe93d45c2f652',
+        'name' => 'ewenh/gsb',
         'dev' => true,
     ),
     'versions' => array(
@@ -146,6 +146,15 @@
             'install_path' => __DIR__ . '/../egulias/email-validator',
             'aliases' => array(),
             'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+            'dev_requirement' => false,
+        ),
+        'ewenh/gsb' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '99dbf2ee9e9d49463549585f59abe93d45c2f652',
             'dev_requirement' => false,
         ),
         'facade/flare-client-php' => array(
@@ -464,15 +473,6 @@
             'install_path' => __DIR__ . '/../laravel/framework',
             'aliases' => array(),
             'reference' => '9cc0efd724ce67a190b1695ba31a27bbb1ae9177',
-            'dev_requirement' => false,
-        ),
-        'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'reference' => NULL,
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
