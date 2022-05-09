@@ -146,7 +146,7 @@ class CompteRenduController extends Controller
                                     ->where('RAP_NUM', $id)
                                     ->firstOrFail();
 
-        $medicaments = Offrir::join('medicaments', 'offrir.MED_DEPOTLEGAL', '=', 'medicament.MED_DEPOTLEGAL')
+        $medicaments = Offrir::join('medicament', 'offrir.MED_DEPOTLEGAL', '=', 'medicament.MED_DEPOTLEGAL')
                                     ->where('offrir.RAP_NUM', $id)
                                     ->get();
 
