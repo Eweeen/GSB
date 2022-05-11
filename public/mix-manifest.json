@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/js/search.js": "/js/search.js",
     "/js/comptes-rendus.js": "/js/comptes-rendus.js",
+    "/js/connexions.js": "/js/connexions.js",
     "/css/style.css": "/css/style.css"
 }
