@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Auth;
 
 use App\Models\Visiteur;
+use App\Models\Connexion;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -56,6 +57,13 @@ class LoginRequest extends FormRequest
                 'VIS_NOM' => __('auth.failed'),
             ]);
         }
+
+        $dateActuelle = date('Y-m-d H:i:s', time());
+
+        $connexion = Connexion::create([
+            'VIS_MATRICULE' => $visiteur->VIS_MATRICULE,
+            'date' => $dateActuelle
+        ]);
 
         Auth::login($visiteur);
         RateLimiter::clear($this->throttleKey());

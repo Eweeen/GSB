@@ -8,6 +8,8 @@
 <section>
         <h1>Profil</h1>
 
+        <a href="/connexions">Mes connexions</a>
+
         <form method="POST" action="/profil" id="form">
             @csrf
 

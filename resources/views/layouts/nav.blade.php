@@ -20,6 +20,9 @@
                 <a href="/profil" class="nav-profil-item" draggable="false">
                     <li>Profil <i class='bx bxs-user-badge'></i></li>
                 </a>
+                <a href="/connexions" class="nav-profil-item" draggable="false">
+                    <li>Connexions</li>
+                </a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a href="{{-- route('logout') --}}" class="nav-profil-item" onclick="event.preventDefault(); this.closest('form').submit();" draggable="false">

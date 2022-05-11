@@ -1,1 +1,38 @@
-(()=>{var e=document.querySelector(".add-row"),t=document.querySelector("#table-container"),n=document.querySelector("#row_medoc"),d="",c=1;medicaments.forEach((function(e){return d+='\n<option value="'.concat(e.medDepotlegal,'">').concat(e.medNomcommercial,"</option>\n")})),e.addEventListener("click",(function(){var e=document.createElement("tr"),a=document.createElement("td"),m=document.createElement("select");m.name="med"+c,m.id="med"+c,m.innerHTML=d;var o=document.createElement("td"),r=document.createElement("input");r.type="number",r.name="quantite"+c,r.id="quantite"+c,r.min="1",r.value="1",a.appendChild(m),o.appendChild(r),e.appendChild(a),e.appendChild(o),t.appendChild(e),c++,n.value++}))})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!****************************************!*\
+  !*** ./resources/js/comptes-rendus.js ***!
+  \****************************************/
+var btn = document.querySelector('.add-row');
+var container = document.querySelector('#table-container');
+var nbRowMedocs = document.querySelector('#row_medoc');
+var tdGroup = "";
+var option = "";
+var numberInput = 1;
+medicaments.forEach(function (med) {
+  return option += "\n<option value=\"".concat(med.medDepotlegal, "\">").concat(med.medNomcommercial, "</option>\n");
+});
+btn.addEventListener('click', function () {
+  var tr = document.createElement('tr');
+  var td1 = document.createElement('td');
+  var select = document.createElement('select');
+  select.name = "med" + numberInput;
+  select.id = "med" + numberInput;
+  select.innerHTML = option;
+  var td2 = document.createElement('td');
+  var inputNumber = document.createElement('input');
+  inputNumber.type = "number";
+  inputNumber.name = "quantite" + numberInput;
+  inputNumber.id = "quantite" + numberInput;
+  inputNumber.min = "1";
+  inputNumber.value = "1";
+  td1.appendChild(select);
+  td2.appendChild(inputNumber);
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  container.appendChild(tr);
+  numberInput++;
+  nbRowMedocs.value++;
+});
+/******/ })()
+;

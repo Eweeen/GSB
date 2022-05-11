@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PraticienController;
 use App\Http\Controllers\CompteRenduController;
+use App\Http\Controllers\ConnexionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,9 @@ Route::middleware(['auth'])->group(function(){
     
     Route::resource('/comptes-rendus', CompteRenduController::class);
     Route::get('/comptes-rendus/downlaod-pdf/{id}', [CompteRenduController::class, 'download_pdf']);
+
+    Route::get('/connexions', [ConnexionController::class, 'index'])->name('connexions');
+    Route::post('/connexions', [ConnexionController::class, 'store'])->name('connexions.store');
 });
 
 Route::get('/dashboard', function () {

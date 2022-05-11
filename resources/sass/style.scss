@@ -160,10 +160,10 @@ nav {
         overflow: hidden;
         transition: height 0.4s ease-in-out;
         &.active {
-            height: 70.8px;
-            @include laptop {
-                height: 83.6px;
-            }
+            height: auto;
+            // @include laptop {
+            //     height: auto;
+            // }
         }
         .nav-profil-item {
             display: inline-block;
