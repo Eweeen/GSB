@@ -11,17 +11,17 @@ Copier et coller le fichier .env
 
 Installer le projet
 ```
-   composer update
+$ composer update
 ```
 
 Installer les dépendences
 ```
-   npm install
+$ npm install
    
-   npm run dev
+$ npm run dev
 ```
 
 Lancer le projet 
 ```
-   php artisan serve
+$ php artisan serve
 ```
